@@ -4,7 +4,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import COLORS from '../constant/color'
 import { Icon } from 'react-native-elements'
 import product from '../constant/product';
-
+import { TouchableOpacity } from 'react-native-web'
+import HomeScreen from './HomeScreen'
+import { Button } from 'react-native-elements/dist/buttons/Button'
 
 const DetailsScreen = ({navigation,route}) => {
     const product = route.params;
@@ -26,7 +28,7 @@ const DetailsScreen = ({navigation,route}) => {
                     <Text style={{fontSize:22,fontWeight:'bold'}}>{product.name}</Text>
                     <View style={styles.priceTag}>
                         <Text style={{marginLeft:15,color:COLORS.white,fontWeight:'bold',fontSize:16,}}>
-                            ${product.price}
+                            RS {product.price}
                         </Text>
                     </View>
                 </View>
@@ -44,16 +46,22 @@ const DetailsScreen = ({navigation,route}) => {
                             </View>
                         </View>
                         <View style={styles.buyBtn}>
-                        <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
+                        <Button  title="Buy"  
+                       onPress={() => navigation.navigate('Payments')}/>
+                        {/* <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
                             Buy
-                         </Text>
-                        </View>
+                         </Text>  */}
+                        </View> 
                     </View>
                 </View>
             </View>
         </SafeAreaView>
     )
 }
+
+
+
+
 
 const styles = StyleSheet.create({
     header:{

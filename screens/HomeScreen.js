@@ -7,7 +7,7 @@ import product from '../constant/product';
 
 const width = Dimensions.get("screen").width/2-30;
 const HomeScreen = ({navigation}) => {
-  const categories = ['Electronics', 'Mobiles', 'Travel', 'Appliances'];
+  const categories = ['Electronics'];
 
   const [categoryIndex, setCategoryIndex] = React.useState(0)
 
@@ -55,7 +55,7 @@ const HomeScreen = ({navigation}) => {
          {product.name}
        </Text>
        <View style={{flexDirection:'row',justifyContent:'space-between',marginTop:5}}>
-         <Text style={{fontSize:19,fontWeight:'bold'}}>${product.price}</Text>
+         <Text style={{fontSize:19,fontWeight:'bold'}}>RS {product.price}</Text>
          <View style={{height:25,width:25,backgroundColor:COLORS.green,
         borderRadius:5,
         justifyContent:'center',
